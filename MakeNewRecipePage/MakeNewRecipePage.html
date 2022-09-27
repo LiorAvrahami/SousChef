@@ -1,0 +1,14 @@
+<template id="recipes_for_tests">
+    <include file="resources\recipes.json"></include>
+</template>
+
+<script src="MakeNewRecipePage\MakeNewRecipePage.js" async defer></script>
+
+<!-- top bar -->
+<div class="flex Row" style="height: 10vh;">
+    <img class="clickable" src="resources\Cancle.png" style="height: inherit; margin-right: auto;" alt="options-gear" onclick="onCancelClicked()">
+    <img class="clickable" src="resources\import.png" style="height: inherit;" alt="import" onclick="onImportClicked()">
+</div>
+
+<div id="recipes_list" style="width: 100%; height: 80vh; overflow: scroll;">
+</div>

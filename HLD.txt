@@ -1,0 +1,55 @@
+functions:
+- recipe list
+    - start next tweaked recipe
+        shows a list of the recipe-steps each of which can be ticked off
+        - at the bottom: rate/abort/skip
+            - rate: rate this recipe tweak. when a rating is added this updates the data that the the recipe selection algorithm uses to determine the next recipe tweak to try.
+                - number between 0 and 10, (could be decimal) not including 0, and not including 10. 
+                this number should be distributed uniformly in this range, meaning that for example the user should try and make sure that this number is
+                in the range 1-3 one fifth of the time and that the number is in the range 0-1 one tenth of the time.
+                - info/free-text: here you can write non-quantitative insights regarding 
+            - abort: disposes all information regarding progress of this recipe tweak. (but this tweak will still be the next one to try)
+            - skip: skips this recipe tweak and start a new one (not sure how to implement)
+    - estimate best tweaked recipe
+    - share recipe
+    - view original recipe 
+- add recipe
+    - import shared recipe
+    - new recipe
+        - insert steps in free text box. each step starts with a new line followed by a "-".
+        each number is followed by units in square brackets. for example a valid step could be "- pour in 5[cups] of flower ".
+    
+- options
+    - make backup
+    - load backup
+
+pages segregation:
+    recipesOverviewPage:
+        recipe list
+            start next tweaked recipe
+            estimate best tweaked recipe
+            share recipe
+            view original recipe 
+        add recipe
+        options
+
+    recipeStepsPage:
+        a list of the recipe-steps each of which can be ticked off
+        rate
+        abort
+        skip
+
+    submitRatingPage
+        insert number
+        insert free-text
+        submit button
+    
+    addRecipePage:
+        new recipe
+        import shared recipe
+
+    options
+        make backup
+        load backup
+
+

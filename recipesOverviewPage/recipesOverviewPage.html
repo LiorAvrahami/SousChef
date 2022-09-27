@@ -1,0 +1,48 @@
+<template id="recipes_for_tests">
+    <include file="resources\recipes.json"></include>
+</template>
+
+<script src="recipesOverviewPage\recipesOverviewPage.js" async defer></script>
+
+<!-- top bar -->
+<div class="flexRow" style="height: 10vh;">
+    <div title="" style="display: table-cell; text-align: left; height: inherit;">
+        <img class="clickable" src="resources\gear.png" style="height: inherit;" alt="options-gear">
+    </div>
+</div>
+
+<div id="recipes_list" style="width: 100%; height: 80vh; overflow: scroll;">
+    <template id="recipes_list_element">
+        <!-- the list element -->
+        <div>
+            <div class="flex Row" style="height: 13vh;">
+                <div class="clickable" style="margin-right: auto;">
+                    <p class="listElementName">
+                        UNINITIALIZED
+                    </p>
+                </div>
+                <img class="collapsible clickable" collapsible_content_id="UNINITIALIZED" src="resources\down_arrow.png"
+                    style="height: inherit;">
+            </div>
+            <div class="collapsibleContent" collapsible_content_id="UNINITIALIZED">
+                <div class="flex Row" style="height: 9vh;   flex-direction: row-reverse;">
+                    <img class="clickable" src="resources\GetBest.png" style="height: inherit;">
+                    <img class="clickable" src="resources\Edit.png" style="height: inherit;">
+                    <img class="clickable" src="resources\export.png" style="height: inherit;">
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="new_recipes_list_element">
+        <!-- the add new recipe list element -->
+        <div>
+            <div class="flex Row" style="height: 13vh;">
+                <div class="listElementName" style="margin-right: auto;">
+                    Add New Recipe
+                </div>
+                <img class="collapsible clickable" collapsible_content_id="UNINITIALIZED" src="resources\Plus.png"
+                    style="height: inherit;" onclick="addNewRecipeButtonClicked()">
+            </div>
+        </div>
+    </template>
+</div>

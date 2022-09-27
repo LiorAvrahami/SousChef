@@ -1,0 +1,23 @@
+.clickable:hover {
+    background-color: #555;
+}
+
+/* *{
+    border: 1px solid magenta;
+} */
+
+body{
+    font-size: min(5vw,4.17vh);
+}
+
+.flex {
+    display: flex;
+}
+
+.Row {
+    width: inherit;
+    align-items: center;
+    background-color: #aaa;
+    margin-bottom: 15px;
+}
+
