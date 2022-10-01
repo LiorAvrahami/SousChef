@@ -1,9 +1,7 @@
-var recipes_str = document.getElementById("recipes_for_tests").innerHTML;
-var recipes = JSON.parse(recipes_str);
-
 var recipes_list_elements = [];
 
 function reset_recipes_list() {
+    var recipes = load_recipes_json_Object();
     for (let i = 0; i < recipes.length; i++) {
         add_list_item(recipes[i]);
     }
@@ -51,5 +49,11 @@ function OnCLick() {
 
 function addNewRecipeButtonClicked() {
     SwitchPage("MakeNewRecipePage");
+}
+
+function OnOptionsClicked() {
+    var recipes_str = document.getElementById("recipes_for_tests").innerHTML;
+    var recipes = JSON.parse(recipes_str);
+    save_recipes_json_Object(recipes);
 }
 reset_recipes_list()

@@ -19,7 +19,9 @@
 
 <body>
     <script src="collapsibles\collapsibles.js" async defer></script>
+    <script src="RecipeStorage\RecipeStorage_interface.js" async defer></script>
     <script src="main\main.js" async defer></script>
+    <script src="utils\utils.js" async defer></script>
     <!--[if lt IE 7]>
             <p>You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -60,7 +62,8 @@
 <!-- top bar -->
 <div class="flexRow" style="height: 10vh;">
     <div title="" style="display: table-cell; text-align: left; height: inherit;">
-        <img class="clickable" src="resources\gear.png" style="height: inherit;" alt="options-gear">
+        <img class="clickable" src="resources\gear.png" style="height: inherit;" alt="options-gear"
+            onclick="OnOptionsClicked()">
     </div>
 </div>
 
