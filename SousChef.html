@@ -15,6 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="main\main.css">
     <link rel="stylesheet" href="collapsibles\collapsibles.css">
+    <link rel="stylesheet" href="recipesOverviewPage\recipesOverviewPage.css">
+    <link rel="stylesheet" href="MakeNewRecipePage\MakeNewRecipePage.css">
+    
 </head>
 
 <body>
@@ -25,7 +28,7 @@
     <!--[if lt IE 7]>
             <p>You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div id="recipesOverviewPage">
+    <div id="recipesOverviewPage" class="colored">
         <template id="recipes_for_tests">
     [
     {
@@ -60,7 +63,7 @@
 <script src="recipesOverviewPage\recipesOverviewPage.js" async defer></script>
 
 <!-- top bar -->
-<div class="flexRow" style="height: 10vh;">
+<div class="flex Row" style="height: 10vh;">
     <div title="" style="display: table-cell; text-align: left; height: inherit;">
         <img class="clickable" src="resources\gear.png" style="height: inherit;" alt="options-gear"
             onclick="OnOptionsClicked()">
@@ -71,7 +74,7 @@
     <template id="recipes_list_element">
         <!-- the list element -->
         <div>
-            <div class="flex Row" style="height: 13vh;">
+            <div class="flex Row colored" style="height: 13vh;">
                 <div class="clickable" style="margin-right: auto;">
                     <p class="listElementName">
                         UNINITIALIZED
@@ -81,7 +84,7 @@
                     style="height: inherit;">
             </div>
             <div class="collapsibleContent" collapsible_content_id="UNINITIALIZED">
-                <div class="flex Row" style="height: 9vh;   flex-direction: row-reverse;">
+                <div class="flex Row colored" style="height: 9vh;   flex-direction: row-reverse;">
                     <img class="clickable" src="resources\GetBest.png" style="height: inherit;">
                     <img class="clickable" src="resources\Edit.png" style="height: inherit;">
                     <img class="clickable" src="resources\export.png" style="height: inherit;">
@@ -92,7 +95,7 @@
     <template id="new_recipes_list_element">
         <!-- the add new recipe list element -->
         <div>
-            <div class="flex Row" style="height: 13vh;">
+            <div class="flex Row colored" style="height: 13vh;">
                 <div class="listElementName" style="margin-right: auto;">
                     Add New Recipe
                 </div>
@@ -103,7 +106,7 @@
     </template>
 </div>
     </div>
-    <div id="MakeNewRecipePage" style="display: none;">
+    <div id="MakeNewRecipePage" style="display: none;" class="colored">
         <template id="recipes_for_tests">
     [
     {
@@ -139,11 +142,21 @@
 
 <!-- top bar -->
 <div class="flex Row" style="height: 10vh;">
-    <img class="clickable" src="resources\Cancle.png" style="height: inherit; margin-right: auto;" alt="options-gear" onclick="onCancelClicked()">
+    <img class="clickable" src="resources\Cancle.png" style="height: inherit; margin-right: auto;" alt="options-gear"
+        onclick="onCancelClicked()">
     <img class="clickable" src="resources\import.png" style="height: inherit;" alt="import" onclick="onImportClicked()">
 </div>
 
-<div id="recipes_list" style="width: 100%; height: 80vh; overflow: scroll;">
+<div class="flex form colored" id="recipes_list" style="height: 80vh">
+    <div class="flex Row">
+        <label for="name">Name:</label>
+        <input type="text" id="recipe_name_field" name="user_name">
+    </div>
+    <label for="mail">Recipe Steps:</label>
+    <textarea name="RecipeSteps" id="recipe_steps_field"
+        style="width: 90%; height: 50vh; resize: none; font: inherit;"></textarea>
+    <button style="color: rgb(16, 77, 16); margin-top: 5vh;" class="colored1 clickable" onclick="SubmitRecipe()">
+        <b>Submit</b> </button>
 </div>
     </div>
 </body>

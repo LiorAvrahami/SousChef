@@ -1,13 +1,23 @@
-.clickable:hover {
-    background-color: #555;
+:root {
+    /* these constants indicate the color values at different depths. */
+    --bgColor0: rgba(213, 213, 255, 0.795);
+    --bgColor1: rgba(167, 167, 240, 0.795);
+    --bgColor2: rgba(109, 128, 168, 0.795);
+    --borderColor0: rgba(181, 181, 216, 0.795);
+    ;
+    --borderColor1: rgba(106, 106, 173, 0.795);
+    --borderColor2: rgba(76, 76, 128, 0.795);
+    --borderRadius0: 30px;
+    --borderRadius1: 20px;
+    --borderRadius2: 10px;
 }
 
 /* *{
     border: 1px solid magenta;
 } */
 
-body{
-    font-size: min(5vw,4.17vh);
+body {
+    font-size: larger;
 }
 
 .flex {
@@ -17,7 +27,40 @@ body{
 .Row {
     width: inherit;
     align-items: center;
-    background-color: #aaa;
+    /* background-color: #aaa; */
     margin-bottom: 15px;
 }
 
+div.form {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto auto;
+    width: 87vw;
+
+}
+
+/* give the correct color values to the different depths. note this is somewhat of a trick, we use the
+   cascading property of css, meaning that new rules overwrite old rules. here if the current colored 
+   element is a child of some other colored element then the color of the current element is set to be 
+   the color of the second depth (depth 1). and also if element is colored and also has two colored parents,
+   then the color of this element is set to be depth 2 (the third depth).
+     */
+.colored {
+    background-color: var(--bgColor0);
+    border: 5px solid var(--borderColor0);
+    border-radius: var(--borderRadius0);
+}
+
+.colored .colored, .colored1 {
+    background-color: var(--bgColor1);
+    border: 5px solid var(--borderColor1);
+    border-radius: var(--borderRadius1);
+}
+
+.colored .colored .colored ,.clickable:hover{
+    background-color: var(--bgColor2);
+    border: 5px solid var(--borderColor2);
+    border-radius: var(--borderRadius2);
+}
