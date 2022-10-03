@@ -18,5 +18,6 @@ function SubmitRecipe() {
     var recipes = load_recipes_json_Object();
     recipes.push({ "name": name, "steps": steps })
     save_recipes_json_Object(recipes);
+    reset_recipes_list();
     SwitchPage("recipesOverviewPage")
 }

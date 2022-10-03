@@ -5,20 +5,21 @@
 <script src="MakeNewRecipePage\MakeNewRecipePage.js" async defer></script>
 
 <!-- top bar -->
-<div class="flex Row" style="height: 10vh;">
-    <img class="clickable" src="resources\Cancle.png" style="height: inherit; margin-right: auto;" alt="options-gear"
+<div class="Flex Row" style="height: 10vh;">
+    <img class="clickable" src="resources\Cancel.png" style="height: inherit; margin-right: auto;" alt="options-gear"
         onclick="onCancelClicked()">
     <img class="clickable" src="resources\import.png" style="height: inherit;" alt="import" onclick="onImportClicked()">
 </div>
 
-<div class="flex form colored" id="recipes_list" style="height: 80vh">
-    <div class="flex Row">
+<div class="Flex Form Colored" style="height: 80vh">
+    <div class="Flex Row">
         <label for="name">Name:</label>
-        <input type="text" id="recipe_name_field" name="user_name">
+        <input type="text" id="recipe_name_field" name="user_name" style="font: inherit;">
     </div>
-    <label for="mail">Recipe Steps:</label>
+    <label>Recipe Steps:</label>
     <textarea name="RecipeSteps" id="recipe_steps_field"
         style="width: 90%; height: 50vh; resize: none; font: inherit;"></textarea>
-    <button style="color: rgb(16, 77, 16); margin-top: 5vh;" class="colored1 clickable" onclick="SubmitRecipe()">
+    <button style="color: rgb(16, 77, 16); margin-top: 5vh; font-size: 20px" class="Colored1 clickable"
+        onclick="SubmitRecipe()">
         <b>Submit</b> </button>
 </div>

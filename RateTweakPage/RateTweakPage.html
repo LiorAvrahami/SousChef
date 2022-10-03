@@ -1,0 +1,18 @@
+<script src="RateTweakPage\RateTweakPage.js" async defer></script>
+
+<!-- top bar -->
+<div class="Flex Row" style="height: 10vh;">
+    <button class="clickable Colored1" src="resources\Cancel.png"
+        style="height: inherit; margin-right: auto; font-size: 20px;" alt="Skip" onclick="SkipClicked()"> <b>Skip</b>
+    </button>
+    <img class="clickable" src="resources\submit.png" style="height: inherit;" alt="submit" onclick="OnSubmitRatingClicked()">
+</div>
+
+<div class="Flex Form Colored" style="height: 80vh">
+    <label style="font: inherit 40px;">Rating:</label>
+    <input type="number" id="ratingValueField"
+        style="font: inherit; font-size: 40px; width: 50vw ;max-width: 400px; text-align: center;">
+    <label>Free Text:</label>
+    <textarea id="FreeTextField"
+        style="width: 70%; height: 30vh; resize: auto; font: inherit;font-size: 30px;"></textarea>
+</div>

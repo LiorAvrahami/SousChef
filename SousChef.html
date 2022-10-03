@@ -17,7 +17,10 @@
     <link rel="stylesheet" href="collapsibles\collapsibles.css">
     <link rel="stylesheet" href="recipesOverviewPage\recipesOverviewPage.css">
     <link rel="stylesheet" href="MakeNewRecipePage\MakeNewRecipePage.css">
-    
+    <link rel="stylesheet" href="RecipeStepsPage\RecipeStepsPage.css">
+    <link rel="stylesheet" href="RateTweakPage\RateTweakPage.css">
+
+
 </head>
 
 <body>
@@ -28,8 +31,62 @@
     <!--[if lt IE 7]>
             <p>You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <div id="recipesOverviewPage" class="colored">
-        <template id="recipes_for_tests">
+    <div id="recipesOverviewPage" class="Colored Page">
+        <script src="recipesOverviewPage\recipesOverviewPage.js" async defer></script>
+
+<!-- top bar -->
+<div class="Flex Row" style="height: 10vh;">
+    <div title="" style="display: table-cell; text-align: left; height: inherit;">
+        <img class="clickable" src="resources\gear.png" style="height: inherit;" alt="options-gear"
+            onclick="OnOptionsClicked()">
+    </div>
+</div>
+
+<!-- the list of elements -->
+<div id="recipes_list" style="width: 100%; height: 68vh; overflow: scroll;">
+
+</div>
+
+<!-- the bottom "add new recipe" bar -->
+<div>
+    <div class="Flex Row Colored listElement">
+        <div class="listElementName" style="margin-right: auto;">
+            Add New Recipe
+        </div>
+        <img class="collapsible clickable" collapsible_content_id="UNINITIALIZED" src="resources\Plus.png"
+            style="height: inherit;" onclick="addNewRecipeButtonClicked()">
+    </div>
+</div>
+
+<!-- template of general list element -->
+<template id="recipes_list_element_template">
+    <div>
+        <div class="Flex Row Colored listElement">
+            <div class="clickable" onclick="OnStartNextTweakedRecipe(this)">
+                <div class="listElementNameContainer Flex">
+                    <p class="listElementName" indexInRecipesList="UNINITIALIZED">
+                        UNINITIALIZED
+                    </p>
+                </div>
+            </div>
+            <div style="margin-right: auto;">
+
+            </div>
+            <img class="collapsible clickable" collapsible_content_id="UNINITIALIZED" src="resources\down_arrow.png"
+                style="height: inherit;">
+        </div>
+        <div class="collapsibleContent" collapsible_content_id="UNINITIALIZED">
+            <div class="Flex Row Colored CollapsedlistElement" style="Flex-direction: row-reverse;">
+                <img class="clickable" src="resources\GetBest.png" style="height: inherit;">
+                <img class="clickable" src="resources\Edit.png" style="height: inherit;">
+                <img class="clickable" src="resources\export.png" style="height: inherit;">
+            </div>
+        </div>
+    </div>
+</template>
+
+<!-- this is a hack for debugging, this template contains the default recipes json -->
+<template id="recipes_for_tests">
     [
     {
         "name": "Microwaved Rice",
@@ -59,54 +116,8 @@
     }
 ]
 </template>
-
-<script src="recipesOverviewPage\recipesOverviewPage.js" async defer></script>
-
-<!-- top bar -->
-<div class="flex Row" style="height: 10vh;">
-    <div title="" style="display: table-cell; text-align: left; height: inherit;">
-        <img class="clickable" src="resources\gear.png" style="height: inherit;" alt="options-gear"
-            onclick="OnOptionsClicked()">
     </div>
-</div>
-
-<div id="recipes_list" style="width: 100%; height: 80vh; overflow: scroll;">
-    <template id="recipes_list_element">
-        <!-- the list element -->
-        <div>
-            <div class="flex Row colored" style="height: 13vh;">
-                <div class="clickable" style="margin-right: auto;">
-                    <p class="listElementName">
-                        UNINITIALIZED
-                    </p>
-                </div>
-                <img class="collapsible clickable" collapsible_content_id="UNINITIALIZED" src="resources\down_arrow.png"
-                    style="height: inherit;">
-            </div>
-            <div class="collapsibleContent" collapsible_content_id="UNINITIALIZED">
-                <div class="flex Row colored" style="height: 9vh;   flex-direction: row-reverse;">
-                    <img class="clickable" src="resources\GetBest.png" style="height: inherit;">
-                    <img class="clickable" src="resources\Edit.png" style="height: inherit;">
-                    <img class="clickable" src="resources\export.png" style="height: inherit;">
-                </div>
-            </div>
-        </div>
-    </template>
-    <template id="new_recipes_list_element">
-        <!-- the add new recipe list element -->
-        <div>
-            <div class="flex Row colored" style="height: 13vh;">
-                <div class="listElementName" style="margin-right: auto;">
-                    Add New Recipe
-                </div>
-                <img class="collapsible clickable" collapsible_content_id="UNINITIALIZED" src="resources\Plus.png"
-                    style="height: inherit;" onclick="addNewRecipeButtonClicked()">
-            </div>
-        </div>
-    </template>
-</div>
-    </div>
-    <div id="MakeNewRecipePage" style="display: none;" class="colored">
+    <div id="MakeNewRecipePage" style="display: none;" class="Colored Page">
         <template id="recipes_for_tests">
     [
     {
@@ -141,24 +152,67 @@
 <script src="MakeNewRecipePage\MakeNewRecipePage.js" async defer></script>
 
 <!-- top bar -->
-<div class="flex Row" style="height: 10vh;">
-    <img class="clickable" src="resources\Cancle.png" style="height: inherit; margin-right: auto;" alt="options-gear"
+<div class="Flex Row" style="height: 10vh;">
+    <img class="clickable" src="resources\Cancel.png" style="height: inherit; margin-right: auto;" alt="options-gear"
         onclick="onCancelClicked()">
     <img class="clickable" src="resources\import.png" style="height: inherit;" alt="import" onclick="onImportClicked()">
 </div>
 
-<div class="flex form colored" id="recipes_list" style="height: 80vh">
-    <div class="flex Row">
+<div class="Flex Form Colored" style="height: 80vh">
+    <div class="Flex Row">
         <label for="name">Name:</label>
-        <input type="text" id="recipe_name_field" name="user_name">
+        <input type="text" id="recipe_name_field" name="user_name" style="font: inherit;">
     </div>
-    <label for="mail">Recipe Steps:</label>
+    <label>Recipe Steps:</label>
     <textarea name="RecipeSteps" id="recipe_steps_field"
         style="width: 90%; height: 50vh; resize: none; font: inherit;"></textarea>
-    <button style="color: rgb(16, 77, 16); margin-top: 5vh;" class="colored1 clickable" onclick="SubmitRecipe()">
+    <button style="color: rgb(16, 77, 16); margin-top: 5vh; font-size: 20px" class="Colored1 clickable"
+        onclick="SubmitRecipe()">
         <b>Submit</b> </button>
 </div>
     </div>
+    <div id="RecipeStepsPage" style="display: none;" class="Colored Page">
+        <script src="RecipeStepsPage\RecipeStepsPage.js" async defer></script>
+
+<!-- top bar -->
+<div class="Flex Row" style="height: 10vh;">
+    <img class="clickable" src="resources\Cancel.png" style="height: inherit; margin-right: auto;" alt="go back"
+        onclick="GoBackClicked()">
+    <img class="clickable" src="resources\submit.png" style="height: inherit;" alt="submit" onclick="OnSubmitClicked()">
+</div>
+
+<div class="Flex Form Colored" style="height: 10vh">
+    <p id="recipeTitle" class="RecipeTitle">
+        UNINITIALIZED
+    </p>
+</div>
+<div class="Flex Form Colored" style="height: 70vh; justify-content: start;">
+    <p id="recipeText" class="RecipeText">
+        UNINITIALIZED
+    </p>
+</div>
+    </div>
+    <div id="RateTweakPage" style="display: none;" class="Colored Page">
+        <script src="RateTweakPage\RateTweakPage.js" async defer></script>
+
+<!-- top bar -->
+<div class="Flex Row" style="height: 10vh;">
+    <button class="clickable Colored1" src="resources\Cancel.png"
+        style="height: inherit; margin-right: auto; font-size: 20px;" alt="Skip" onclick="SkipClicked()"> <b>Skip</b>
+    </button>
+    <img class="clickable" src="resources\submit.png" style="height: inherit;" alt="submit" onclick="OnSubmitRatingClicked()">
+</div>
+
+<div class="Flex Form Colored" style="height: 80vh">
+    <label style="font: inherit 40px;">Rating:</label>
+    <input type="number" id="ratingValueField"
+        style="font: inherit; font-size: 40px; width: 50vw ;max-width: 400px; text-align: center;">
+    <label>Free Text:</label>
+    <textarea id="FreeTextField"
+        style="width: 70%; height: 30vh; resize: auto; font: inherit;font-size: 30px;"></textarea>
+</div>
+    </div>
+
 </body>
 
 </html>

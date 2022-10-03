@@ -1,3 +1,38 @@
+:root {
+    --OverViewPageElementHeight: min(15vw, 13vh);
+}
+
 #recipesOverviewPage {
-    font-size: min(5vw, 4.17vh);
+    font-size: calc(var(--OverViewPageElementHeight)/2.6);
+}
+
+#recipesOverviewPage .listElement {
+    height: var(--OverViewPageElementHeight);
+}
+
+#recipesOverviewPage .CollapsedlistElement {
+    height: calc(var(--OverViewPageElementHeight)/1.5);
+}
+
+
+#recipesOverviewPage .listElementNameContainer{
+
+    width: calc(95vw - 40px - var(--OverViewPageElementHeight));
+    height: var(--OverViewPageElementHeight);
+    margin-top: 0;
+    margin-bottom: 0;
+
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#recipesOverviewPage .listElementName{
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+
+    width: inherit;
+
+    margin-top: 0;
+    margin-bottom: 0;
 }

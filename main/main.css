@@ -12,15 +12,22 @@
     --borderRadius2: 10px;
 }
 
+/* for debugging */
 /* *{
     border: 1px solid magenta;
 } */
 
+/* hide all scroll-bars in this app*/
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+
 body {
-    font-size: larger;
+    font-size: x-large;
 }
 
-.flex {
+.Flex {
     display: flex;
 }
 
@@ -31,11 +38,10 @@ body {
     margin-bottom: 15px;
 }
 
-div.form {
+div.Form {
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     margin: auto auto;
     width: 87vw;
 
@@ -47,20 +53,24 @@ div.form {
    the color of the second depth (depth 1). and also if element is colored and also has two colored parents,
    then the color of this element is set to be depth 2 (the third depth).
      */
-.colored {
+.Colored {
     background-color: var(--bgColor0);
     border: 5px solid var(--borderColor0);
     border-radius: var(--borderRadius0);
 }
 
-.colored .colored, .colored1 {
+.Colored .Colored, .Colored1 {
     background-color: var(--bgColor1);
     border: 5px solid var(--borderColor1);
     border-radius: var(--borderRadius1);
 }
 
-.colored .colored .colored ,.clickable:hover{
+.Colored .Colored .Colored ,.clickable:hover{
     background-color: var(--bgColor2);
     border: 5px solid var(--borderColor2);
     border-radius: var(--borderRadius2);
+}
+
+.Page{
+    min-height: calc(100vh - 25px);
 }
