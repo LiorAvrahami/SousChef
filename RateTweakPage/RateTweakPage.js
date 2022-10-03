@@ -8,6 +8,5 @@ function SkipClicked() {
     SwitchPage("recipesOverviewPage");
 }
 function OnSubmitRatingClicked() {
-    debugger;
     SwitchPage("recipesOverviewPage");
 }
