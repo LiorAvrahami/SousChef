@@ -84,10 +84,3 @@ div.Form {
 .Page {
     min-height: calc(100vh - 25px);
 }
-
-@media (pointer:none),
-(pointer:coarse) {
-    .Page {
-        min-height: calc(100vh - 70px);
-    }
-}
