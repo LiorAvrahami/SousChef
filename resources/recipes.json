@@ -1,28 +1,36 @@
 [
     {
         "name": "Microwaved Rice",
-        "BaseRecipe": [
-            "1 cup rice",
-            "1.75 cups water",
-            "3 shakes of salt",
-            "1 spoon of soup-powder",
-            "one spoon of olive oil",
-            "15 minuets in the microwave"
-        ],
-        "Trials": [
-            {}
+        "versions": [
+            {
+                "BaseRecipe": [
+                    "1[cups] rice",
+                    "1.75[cups] water",
+                    "3[shakes] of salt",
+                    "1[spoon] of soup-powder",
+                    "some olive oil",
+                    "15[minuets] in the microwave"
+                ],
+                "Trials": [
+                    {}
+                ]
+            }
         ]
     },
     {
         "name": "nerve-calming jasmine tea",
-        "BaseRecipe": [
-            "hot water",
-            "add jasmine leaves",
-            "wait a while",
-            "now you have some hot leaf juice "
-        ],
-        "Trials": [
-            {}
+        "versions": [
+            {
+                "BaseRecipe": [
+                    "hot water",
+                    "add jasmine leaves",
+                    "wait a while",
+                    "now you have some hot leaf juice "
+                ],
+                "Trials": [
+                    {}
+                ]
+            }
         ]
     }
 ]

@@ -1,0 +1,4 @@
+each recipe has several versions. these versions are split into two catagories. "active recipe versions" and "archived recipe versions".
+the tweaker algorithm chooses an active version at random, with bigger weights to higher scoring versions. and then finds a tweak to that selected active version. the tweak can be based on the information acquired by the archived versions. 
+the difference betwean different trial entries of some version is only in the values/ammounts of each measurments (5[cups] of flower vs 3[cups] + 2[spoons] of flower ). thus each trial need only store a statically sized vector of numbers
+on the other hand, different versions can vary by a lot. for example a classical differentiation between two versions can be reordering the recipe. in this case we can surely use the archived entries to get better tweaks of the new recipe. thus we need to identify some static relationships between the different versions

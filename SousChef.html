@@ -37,28 +37,37 @@
     <div id="recipesOverviewPage" class="Colored Page">
         <script src="recipesOverviewPage\recipesOverviewPage.js" async defer></script>
 
-<!-- top bar -->
-<div class="Flex Row" style="height: 10vh;">
-    <div title="" style="display: table-cell; text-align: left; height: inherit;">
-        <img class="clickable" src="resources\gear.png" style="height: inherit;" alt="options-gear"
-            onclick="OnOptionsClicked()">
-    </div>
-</div>
+<div class="Flex Col">
 
-<!-- the list of elements -->
-<div id="recipes_list" style="width: 100%; height: 68vh; overflow: scroll;">
-
-</div>
-
-<!-- the bottom "add new recipe" bar -->
-<div>
-    <div class="Flex Row Colored listElement">
-        <div class="listElementName" style="margin-right: auto;">
-            Add New Recipe
+    <!-- top bar -->
+    <div class="Flex Row" style="height: 10vh;">
+        <div title="" style="display: table-cell; text-align: left; height: inherit;">
+            <img class="clickable" src="resources\gear.png" style="height: inherit;" alt="options-gear"
+                onclick="OnOptionsClicked()">
         </div>
-        <img class="clickable" collapsible_content_id="UNINITIALIZED" src="resources\Plus.png"
-            style="height: inherit;" onclick="addNewRecipeButtonClicked()">
     </div>
+
+    <!-- the list of elements -->
+    <div id="recipes_list" style="width: 100%; overflow: scroll;">
+
+    </div>
+
+    <div style="margin-top: auto;"></div>
+
+    <!-- the bottom "add new recipe" bar -->
+    <div style="width: 100%; overflow: scroll;">
+        <div>
+            <div class="Flex Row Colored listElement">
+                <div class="listElementName">
+                    Add New Recipe
+                </div>
+                <div style="margin-right: auto;"></div>
+                <img class="clickable" collapsible_content_id="UNINITIALIZED" src="resources\Plus.png"
+                    style="height: inherit;" onclick="addNewRecipeButtonClicked()">
+            </div>
+        </div>
+    </div>
+
 </div>
 
 <!-- template of general list element -->
@@ -72,9 +81,7 @@
                     </p>
                 </div>
             </div>
-            <div style="margin-right: auto;">
-
-            </div>
+            <div style="margin-right: auto;"></div>
             <img class="collapsible clickable" collapsible_content_id="UNINITIALIZED" src="resources\down_arrow.png"
                 style="height: inherit;">
         </div>
@@ -93,28 +100,36 @@
     [
     {
         "name": "Microwaved Rice",
-        "BaseRecipe": [
-            "1 cup rice",
-            "1.75 cups water",
-            "3 shakes of salt",
-            "1 spoon of soup-powder",
-            "one spoon of olive oil",
-            "15 minuets in the microwave"
-        ],
-        "Trials": [
-            {}
+        "versions": [
+            {
+                "BaseRecipe": [
+                    "1[cups] rice",
+                    "1.75[cups] water",
+                    "3[shakes] of salt",
+                    "1[spoon] of soup-powder",
+                    "some olive oil",
+                    "15[minuets] in the microwave"
+                ],
+                "Trials": [
+                    {}
+                ]
+            }
         ]
     },
     {
         "name": "nerve-calming jasmine tea",
-        "BaseRecipe": [
-            "hot water",
-            "add jasmine leaves",
-            "wait a while",
-            "now you have some hot leaf juice "
-        ],
-        "Trials": [
-            {}
+        "versions": [
+            {
+                "BaseRecipe": [
+                    "hot water",
+                    "add jasmine leaves",
+                    "wait a while",
+                    "now you have some hot leaf juice "
+                ],
+                "Trials": [
+                    {}
+                ]
+            }
         ]
     }
 ]
@@ -125,28 +140,36 @@
     [
     {
         "name": "Microwaved Rice",
-        "BaseRecipe": [
-            "1 cup rice",
-            "1.75 cups water",
-            "3 shakes of salt",
-            "1 spoon of soup-powder",
-            "one spoon of olive oil",
-            "15 minuets in the microwave"
-        ],
-        "Trials": [
-            {}
+        "versions": [
+            {
+                "BaseRecipe": [
+                    "1[cups] rice",
+                    "1.75[cups] water",
+                    "3[shakes] of salt",
+                    "1[spoon] of soup-powder",
+                    "some olive oil",
+                    "15[minuets] in the microwave"
+                ],
+                "Trials": [
+                    {}
+                ]
+            }
         ]
     },
     {
         "name": "nerve-calming jasmine tea",
-        "BaseRecipe": [
-            "hot water",
-            "add jasmine leaves",
-            "wait a while",
-            "now you have some hot leaf juice "
-        ],
-        "Trials": [
-            {}
+        "versions": [
+            {
+                "BaseRecipe": [
+                    "hot water",
+                    "add jasmine leaves",
+                    "wait a while",
+                    "now you have some hot leaf juice "
+                ],
+                "Trials": [
+                    {}
+                ]
+            }
         ]
     }
 ]

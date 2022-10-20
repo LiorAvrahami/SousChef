@@ -48,7 +48,8 @@ function OnOptionsClicked() {
 function OnStartNextTweakedRecipe(element) {
     var recipes = load_recipes_json_Object();
     RecipeIndex = element.querySelector(".listElementName").getAttribute("indexInRecipesList")
-    LoadRecipeStepsPage(recipes[RecipeIndex]);
+    var selectedRecipe = recipes[RecipeIndex]
+    LoadRecipeStepsPage(selectedRecipe.name, 0, selectedRecipe.versions[0].BaseRecipe, selectedRecipe.versions[0].BaseRecipe);
     SwitchPage("RecipeStepsPage");
 }
 reset_recipes_list()

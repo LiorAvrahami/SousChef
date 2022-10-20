@@ -42,9 +42,16 @@ body {
 .Row {
     width: inherit;
     align-items: center;
-    /* background-color: #aaa; */
     margin-bottom: 15px;
 }
+
+.Col {
+    height: inherit;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
 
 div.Form {
     align-items: center;
