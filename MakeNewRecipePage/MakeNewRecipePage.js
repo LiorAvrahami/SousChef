@@ -16,7 +16,7 @@ function SubmitRecipe() {
     var steps = document.getElementById("recipe_steps_field").value.split("\n");
 
     var recipes = load_recipes_json_Object();
-    recipes.push({ "name": name, "steps": steps })
+    recipes.push({ "name": name, "versions": [{ "BaseRecipe": steps, "Trials": [] }] })
     save_recipes_json_Object(recipes);
     reset_recipes_list();
     SwitchPage("recipesOverviewPage")

@@ -1,6 +1,7 @@
 var recipes_list_elements = [];
 
 function reset_recipes_list() {
+    recipes_list_elements = [];
     document.getElementById("recipes_list").replaceChildren();
     var recipes = load_recipes_json_Object();
     for (let i = 0; i < recipes.length; i++) {
