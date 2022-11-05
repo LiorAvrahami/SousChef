@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="recipesOverviewPage\recipesOverviewPage.css">
     <link rel="stylesheet" href="MakeNewRecipePage\MakeNewRecipePage.css">
     <link rel="stylesheet" href="RecipeStepsPage\RecipeStepsPage.css">
+    <link rel="stylesheet" href="OptionsPage\OptionsPage.css">
     <link rel="stylesheet" href="RateTweakPage\RateTweakPage.css">
 
 
@@ -217,6 +218,20 @@
     <p id="recipeText" class="RecipeText">
         UNINITIALIZED
     </p>
+</div>
+    </div>
+    <div id="OptionsPage" style="display: none;" class="Colored Page">
+        <script src="OptionsPage\OptionsPage.js" async defer></script>
+
+<!-- top bar -->
+<div class="Flex Row" style="height: 10vh;">
+    <img class="clickable" src="resources\Cancel.png" style="height: inherit; margin-right: auto;" alt="go back"
+        onclick="GoBackClicked()">
+</div>
+
+<div class="Flex Row Form Colored">
+    <img class="clickable" src="resources\export.png" style="height: 15vh;" onclick="OnExportClicked()">
+    <img class="clickable" src="resources\import.png" style="height: 15vh;" onclick="OnImportClicked()">
 </div>
     </div>
     <div id="RateTweakPage" style="display: none;" class="Colored Page">

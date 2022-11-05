@@ -41,9 +41,7 @@ function addNewRecipeButtonClicked() {
 }
 
 function OnOptionsClicked() {
-    var recipes_str = document.getElementById("recipes_for_tests").innerHTML;
-    var recipes = JSON.parse(recipes_str);
-    save_recipes_json_Object(recipes);
+    SwitchPage("OptionsPage");
 }
 
 function OnStartNextTweakedRecipe(element) {
